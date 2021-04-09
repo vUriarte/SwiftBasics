@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ColorSliderView: View {
+    @Binding var colorValue: Double
+    var color: Color
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        HStack{
+            ColorSwatch(color: color)
+            Slider(value: $colorValue, in: 0...1, step: 0.01)
 
-struct ColorSliderView_Previews: PreviewProvider {
-    static var previews: some View {
-        ColorSliderView()
+        }
+        .padding()
     }
 }
